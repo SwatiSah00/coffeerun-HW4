@@ -30,6 +30,12 @@
     this.$element.append(rowElement.$element);
   };
 
+  CheckList.prototype.datasend = function(data) {
+    $.each(data, function(i, coffeeOrder) {
+      this.addRow(coffeeOrder);
+    }.bind(this));
+  };
+
   CheckList.prototype.removeRow = function(email) {
     this.$element
       .find("[value='" + email + "']")
